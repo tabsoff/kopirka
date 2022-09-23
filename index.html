@@ -4,27 +4,51 @@
 	<meta charset="utf-8">
 	<title>Калькулятор</title>
 	<script src="script.js"></script>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<p>Листы</p>
-	<div>
-		<input id="sheets"/>
+
+	
+	<div class="radio-btn">
+
+		<div>
+			<p class="title">Страницы</p>
+			<input id="sheets"/ value="0">
+		</div>
+
+  		<p class="title">Формат</p>
+  		<div id="46" class="radio-btn__wrapper">
+        <label class="radio-btn__item">
+        	<input class="radio-btn__input" type="radio" name="size"/>
+        	<p class="radio-btn__title">A4</p>
+      	</label>
+      	<label class="radio-btn__item">
+        	<input class="radio-btn__input" type="radio" name="size"/>
+        	<p class="radio-btn__title">A3</p>
+      	</label>
+    	</div>
+
+    	<p class="title">Цвет</p>
+  		<div id="46" class="radio-btn__wrapper">
+        <label class="radio-btn__item">
+        	<input class="radio-btn__input" type="radio" name="color"/>
+        	<p class="radio-btn__title">ЧБ</p>
+      	</label>
+      	<label class="radio-btn__item">
+        	<input class="radio-btn__input" type="radio" name="color"/>
+        	<p class="radio-btn__title">Цвет</p>
+      	</label>
+    	</div>
+
+    </div>
+
+    <br>
+    <button onclick="calculate()" class="button" title="Посчитать">Посчитать</button>
+	
+	<div id="resultCont" style="overflow: hidden;">
+	    <p style="float: left;" id="result">0</p>
+	    <p style="float: left;">₽</p>
 	</div>
-	<p>Цвет</p>
-  	<div>
-	    <input type="radio" id="Сol_1_0" name="color" value="col_1_0">
-	    <label for="col_1_0">1+0</label>
-	    <input type="radio" id="Сol_1_1" name="color" value="col_1_1">
-	    <label for="col_1_1">1+1</label>
-	    <input type="radio" id="Сol_4_0" name="color" value="col_4_0">
-	    <label for="col_4_0">4+0</label>
-	    <input type="radio" id="Сol_4_4" name="color" value="col_4_4">
-	    <label for="col_4_4">4+4</label>
- 	</div>
- 	
-	<br>
-	<button onclick="calculate()">Посчитать</button>
-	<p id="result"></p>
 
 </body>
 </html>
