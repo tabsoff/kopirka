@@ -243,10 +243,20 @@
 
         <!-- Правые карточки -->
         <div class="col">
-          <div class="card my-4 p-4 card-sh">
-            <div class="mb-0" id="resultCont" style="overflow: hidden">
-              <h4 id="result">29₽ × 1 шт = 29₽</h4>
-            </div>
+          <div class="card my-4 card-sh">
+            <ul class="list-group list-group-flush pt-3 pb-2">
+              <li class="list-group-item px-4">
+                <p class="mb-0" id="insert-price">Печать: 29₽ × 1 стр = 29₽</p>
+                <p class="mb-3" id="insert-paper-price">Бумага: 0₽</p>
+              </li>
+              <li class="list-group-item px-4">
+                <h4 class="mt-3" id="result">29₽ × 1 шт = 29₽</h4>
+              </li>
+            </ul>
+          </div>
+          <div class="px-3 text-muted visually-hidden" id="rnd-note-cnt">
+            <img src="/alert-circle.svg" class="alert-circle" />
+            <p class="mb-0" id="rnd-note"></p>
           </div>
         </div>
       </div>

@@ -1,5 +1,3 @@
-var test;
-
 var lastCard = 1;
 
 function addCard() {
@@ -34,7 +32,7 @@ const priceSheet = [
     [21, 60, 65],
     [51, 45, 50],
     [101, 40, 45],
-    [200, 35, 40],
+    [201, 35, 40],
   ],
 ];
 
@@ -51,6 +49,8 @@ var side;
 var paper;
 
 function calculate() {
+  document.getElementById("rnd-note-cnt").classList.add("visually-hidden");
+
   sheets = Number(document.getElementById("sheets").value);
 
   radio = document.getElementsByName("color");
@@ -94,11 +94,38 @@ function calculate() {
     }
     size += -1;
     paper = pricePaper[size][paper];
-    result = sheets * price + Math.ceil(sheets / side) * paper;
 
-    price = Math.round((result / sheets) * 100) / 100;
+    document.getElementById("insert-price").innerHTML =
+      "Печать: " + price + "₽ × " + sheets + " стр = " + price * sheets + "₽";
+    document.getElementById("insert-paper-price").innerHTML =
+      "Бумага: " +
+      paper +
+      "₽ × " +
+      Math.ceil(sheets / side) +
+      " лист = " +
+      paper * Math.ceil(sheets / side) +
+      "₽";
+
+    result = sheets * price + Math.ceil(sheets / side) * paper;
+    price = result / sheets;
+    if (((result / sheets) * 10) % 1 > 0) {
+      document.getElementById("rnd-note").innerHTML =
+        "Cтоимость за 1 шт (" +
+        Math.round(price * 10000) / 10000 +
+        "...) была округлена, по кассе следует пробить <b>" +
+        result +
+        "₽ × 1 шт </b>";
+      document
+        .getElementById("rnd-note-cnt")
+        .classList.remove("visually-hidden");
+    }
+
+    price = Math.round(price * 100) / 100;
   } else {
     result = sheets * price;
+    document.getElementById("insert-price").innerHTML =
+      "Печать: " + price + "₽ × " + sheets + " стр = " + result + "₽";
+    document.getElementById("insert-paper-price").innerHTML = "Бумага: 0₽";
   }
 
   document.getElementById("result").innerHTML =
