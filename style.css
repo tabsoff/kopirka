@@ -42,6 +42,26 @@ body {
   align-items: center;
 }
 
+.changelog-block {
+  flex-direction: row;
+  display: flex;
+  align-items: flex-start;
+}
+
+@media (max-width: 767px) {
+  .changelog-block {
+    flex-direction: column;
+  }
+}
+
+.changelog-ver {
+  min-width: 5em !important;
+}
+
+.changelog-date {
+  font-size: 0.8em;
+}
+
 #rnd-note {
   padding-right: 2em;
 }
@@ -67,9 +87,4 @@ body {
 
 h4 {
   font-weight: bold;
-}
-
-.badge {
-  padding-top: 0.6em;
-  padding-bottom: 0.6em;
 }
