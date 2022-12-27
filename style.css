@@ -1,104 +1,90 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
-
-
-html, body {
-    background: #fff;
-    font-family: Montserrat;
-    margin-left: 20px;
+/* Дебаг */
+.sh {
+  box-shadow: 0px 1px 2px red;
 }
 
-#resultCont {
-	font-weight: bold;
-  	font-size: 28px;
+/* Основные */
+body {
+  background-color: #f6f6f6;
 }
 
-
-#sheets {
-	border: 1px solid rgb(0 0 0 / 30%);
-	padding: 15px 15px;
-	width: 100px;
-	font-size: 14px;
-	font-family: montserrat;
+.card {
+  border-radius: 0.8rem;
+  border: 0;
+  box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.05);
 }
 
-/*Кнопки*/
-
-.button {
-    border-radius: 4px;
-    font-weight: 700;
-    border: 0;
-    color: #fff;
-    padding: 15px 25px;
-    font-size: 14px;
-    cursor: pointer;
-    text-decoration: none;
-    letter-spacing: 0.7px;
-    background: linear-gradient(45deg, #ff5c14, #ff7e14, #fdc90a);
-    flex: 1;
-    margin-top: 30px;
+.btnr-5 {
+  border-radius: 0.5rem;
 }
 
-/*Радио батоны*/
+.nav-sh {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.01);
+}
 
-.radio-btn {
+.label-height {
+  height: 3em;
+}
+
+@media (min-width: 991px) {
+  .mxw-800 {
+    max-width: 800px;
+  }
+}
+
+.ml-nav {
+  margin-left: 5em;
+}
+
+#rnd-note-cnt {
+  font-size: 0.8em;
   display: flex;
-  flex-wrap: wrap;
-  margin: 10px 0;
+  align-items: center;
 }
 
-.radio-btn .radio-btn__wrapper {
+.changelog-block {
+  flex-direction: row;
   display: flex;
-  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
-.radio-btn .radio-btn__item {
-  position: relative;
-  padding: 15px;
-  display: block;
-  margin: 3px;
-  border: 1px solid rgb(0 0 0 / 30%);
-}
-.radio-btn .radio-btn__item:hover {
-  cursor: pointer;
+@media (max-width: 767px) {
+  .changelog-block {
+    flex-direction: column;
+  }
 }
 
-.radio-btn .radio-btn__title {
-  width: fit-content;
-  margin: 0;
+.changelog-ver {
+  min-width: 5em !important;
 }
 
-.radio-btn .radio-btn__input {
-opacity: 0;
-position: absolute;
-height: 100%;
-width: 100%;
-top: 0;
-left: 0;
-cursor: pointer;
+.changelog-date {
+  font-size: 0.8em;
 }
 
-.radio-btn .radio-btn__input:checked+.radio-btn__title::before {
-  position: absolute;
-  bottom: -1px;
-  left: 0px;
-  content: '';
-  display: block;
-  height: 3px;
-  width: 100%;
-  background: linear-gradient(45deg, #ff5c14, #ff7e14, #fdc90a);
+#rnd-note {
+  padding-right: 2em;
 }
 
-.radio-btn .title {
-  padding: 0;
+@media (max-width: 991px) {
+  .hide-md {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+}
+
+.alert-circle {
+  width: 1.8em;
+  margin-right: 1em;
+}
+
+h4 {
   font-weight: bold;
-  flex-basis: 100%;
-  font-size: 14px;
-}
-
-.radio-btn {
-  margin: 5px 0px;
-}
-
-.title {
-  margin-top: 30px;
 }
