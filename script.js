@@ -125,7 +125,8 @@ function calculate() {
     result = sheets * price;
     document.getElementById("insert-price").innerHTML =
       "Печать: " + price + "₽ × " + sheets + " стр = " + result + "₽";
-    document.getElementById("insert-paper-price").innerHTML = "Бумага: 0₽";
+    document.getElementById("insert-paper-price").innerHTML =
+      "Бумага: Включена";
   }
 
   document.getElementById("result").innerHTML =
